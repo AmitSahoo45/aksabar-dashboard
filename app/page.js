@@ -140,7 +140,7 @@ export default function Home() {
 
               <div
                 onClick={() => {
-                  toast.error('eat some almonds 😂😂')
+                  toast.error('Huh, Again? Really mate?')
                 }}
                 className="text-blue-600 text-base cursor-pointer">Forgot password?</div>
 
