@@ -28,7 +28,7 @@ const Header = () => {
                     className="sm:ml-3 ml-1 text-2xl hover:cursor-pointer"
                 />
                 <div className="w-7 h-7 sm:ml-6 ml-1 sm:mr-0 mr-3">
-                    <img src={session?.user?.image} alt='Profile' className='rounded-full' />
+                    <img src={session?.user?.image || 'https://picsum.photos/200/300'} alt='Profile' className='rounded-full' />
                 </div>
             </div>
         </header>
