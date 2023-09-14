@@ -92,8 +92,10 @@ const Activities = () => {
             {
                 constructor.length < 3 ?
                     (
-                        <div>
-                            Loading...
+                        <div className='my-8 mx-auto flex justify-center'>
+                            <div class="loader border-r-2 rounded-full border-yellow-500 bg-yellow-300 animate-bounce aspect-square w-8 flex justify-center items-center text-yellow-700">
+                                $
+                            </div>
                         </div>
                     ) : (
                         <div className="flex justify-center items-center bg-white rounded-2xl shadow border-2 border-neutral-200 px-3">
@@ -101,7 +103,7 @@ const Activities = () => {
                                 data={config.data}
                                 options={config.options}
                                 width={'30%'}
-                                height={'10%'}
+                                height={'15%'}
                             />
                         </div>
                     )

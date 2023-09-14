@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Navbar = () => {
     return (
 
-        <div className="w-full h-full flex sm:items-start items-center justify-start flex-col py-4 sm:px-10 lg:px-7 sm:pr-0 lg:pr-12 px-3 text-white">
+        <div className="w-full h-full flex sm:items-start items-center justify-start flex-col py-4 sm:px-10 lg:px-7 sm:pr-0 lg:pr-12 px-3 md:pl-5 md:pr-10 text-white">
             <div className="text-white sm:text-4xl text-base font-bold mt-8">Board.</div>
             <div className="w-4 h-4"></div>
             <div className="w-4 h-5"></div>

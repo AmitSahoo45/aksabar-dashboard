@@ -16,6 +16,10 @@ export default function Home() {
   const { data: session, status } = useSession()
   const router = useRouter()
 
+  const onSubmit = () => {
+    toast.error('Oops! This feature isn\'t implemented. Try google sign in.')
+  }
+
   useEffect(() => {
     if (status === 'authenticated') {
       router.push('/dashboard')
@@ -24,9 +28,9 @@ export default function Home() {
   }, [session])
 
   return (
-    <main className='flex flex-row h-full'>
+    <main className='flex sm:flex-row flex-col'>
       {/* left side */}
-      <section className="flex flex-col flex-1 bg-login h-[100vh]">
+      <section className="flex flex-col sm:flex-[0.5] bg-login h-[100vh]">
 
         <div className="flex-[0.2] px-8 py-6 pl-16 pt-10">
           <Image src='/images/logo.png' width={50} height={50} alt='Logo' />
@@ -58,7 +62,7 @@ export default function Home() {
         </div>
       </section>
       {/* right side */}
-      <section className="flex-1 flex items-start flex-col mt-20">
+      <section className="sm:flex-[0.5] flex sm:items-start items-center flex-col mt-20 sm:text-left text-center">
         {/* main component */}
         <div className="px-2">
 
@@ -66,24 +70,26 @@ export default function Home() {
           <div className="text-black text-base font-normal">Sign in to your account</div>
 
           {/* buttons */}
-          <div className="my-3 flex flex-row mt-4">
+          <div className="my-3 flex sm:flex-row flex-col mt-4">
             <button
               onClick={() => signIn('google')}
               className="relative flex items-center justify-center cursor-pointer transition-all duration-200 shadow hover:shadow-md rounded-lg p-3">
               <Image src='/images/google.svg' height={20} width={20} alt='Google' />
-              <p className="w-32 h-4 text-center text-zinc-500 text-xs font-normal">Sign in with Google</p>
+              <p className="h-4 text-center text-zinc-500 text-xs font-normal ml-2">Sign in with Google</p>
             </button>
 
-            <div className="relative flex items-center justify-center cursor-pointer transition-all duration-200 shadow hover:shadow-md rounded-lg p-3 ml-3">
+            <div
+              onClick={() => onSubmit()}
+              className="relative flex items-center justify-center cursor-pointer transition-all duration-200 shadow hover:shadow-md rounded-lg p-3 sm:ml-3 ml-0 sm:mt-0 mt-2">
               <Image src='/images/apple.svg' height={20} width={20} alt='Apple' />
-              <p className="w-32 h-4 text-center text-zinc-500 text-xs font-normal">Sign in with Apple</p>
+              <p className="h-4 text-center text-zinc-500 text-xs font-normal ml-2">Sign in with Apple</p>
             </div>
           </div>
 
 
           {/* Container for Auth data */}
           <div>
-            <div className="w-96 h-80 bg-white rounded-2xl px-3 py-3 pl-5 pt-6">
+            <div className="h-80 bg-white rounded-2xl px-3 py-3 pl-5 pt-6">
 
               {!isLogin && (
                 <>
@@ -110,6 +116,7 @@ export default function Home() {
                 type="text"
                 name="email"
                 id="email"
+                required
                 className="w-full h-11 shadow-sm pl-3 bg-neutral-100 rounded-lg focus:ring-0"
                 placeholder="johndoe@gmail.com"
                 value={email}
@@ -121,6 +128,7 @@ export default function Home() {
               </div>
 
               <input
+                required
                 type="password"
                 name="password"
                 id="password"
@@ -130,10 +138,16 @@ export default function Home() {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <div className="text-blue-600 text-base">Forgot password?</div>
+              <div
+                onClick={() => {
+                  toast.error('eat some almonds 😂😂')
+                }}
+                className="text-blue-600 text-base cursor-pointer">Forgot password?</div>
 
               <div className="w-full bg-blue-500 rounded-lg text-center mt-6">
-                <button className="w-full h-11 text-white text-base font-semibold">Sign in</button>
+                <button
+                  onClick={() => onSubmit()}
+                  className="w-full h-11 text-white text-base font-semibold">Sign in</button>
               </div>
 
               <div className="w-full bg-slate-50 mt-3">

@@ -106,7 +106,7 @@ export default function Dashboard() {
                     <Activities />
 
                     <section className="flex sm:flex-row flex-col mt-4">
-                        <div className='flex-[0.4] w-4/5 h-4/5 bg-white rounded-2xl shadow border-2 border-neutral-200'>
+                        <div className='flex-[0.4] sm:w-4/5 h-4/5 w-full sm:mb-0 mb-4 bg-white rounded-2xl shadow border-2 border-neutral-200'>
                             <div style={{
                                 width: '100%',
                                 height: '100%',
@@ -144,11 +144,11 @@ export default function Dashboard() {
                                 />
                             </div>
                         </div>
-                        <div className="flex-[0.6] bg-white rounded-2xl shadow border-2 border-neutral-200 ml-5">
+                        <div className="flex-[0.6] bg-white rounded-2xl shadow border-2 border-neutral-200 sm:ml-5 ml-0">
                             {
                                 hasbeenSubmitted ?
                                     (
-                                        <div className="flex justify-center h-full flex-col p-5 px-10">
+                                        <div className="flex justify-center h-full flex-col p-5 sm:px-10 px-8 sm:text-left text-center">
                                             <div className='flex-[0.3] pt-5'>
                                                 <p className='text-2xl font-semibold leading-normal'>
                                                     {name}
@@ -156,9 +156,9 @@ export default function Dashboard() {
                                             </div>
                                             <div className='flex-[0.7] flex flex-col justify-start'>
 
-                                                <div className='flex justify-between items-center w-full'>
+                                                <div className='flex justify-between sm:items-center items-start w-full sm:flex-row flex-col sm:pl-0 pl-3'>
                                                     {/* Container containing the data */}
-                                                    <div className='flex-[0.5] flex items-center'>
+                                                    <div className='flex-[0.5] flex items-center sm:mt-0 mt-2'>
                                                         {/* Image Container */}
                                                         <div className='px-1.5 pt-1 mr-3 bg-emerald-50 rounded-full justify-center items-center inline-flex'>
                                                             <Image src='/images/whatsapp.svg' width={40} height={40} alt='WhatsApp' className='text-green-300'/>
@@ -168,7 +168,7 @@ export default function Dashboard() {
                                                             +91 {mobile}
                                                         </div>
                                                     </div>
-                                                    <div className='flex-[0.5] flex items-center'>
+                                                    <div className='flex-[0.5] flex items-center sm:mt-0 mt-3'>
                                                         {/* Image Container */}
                                                         <div className='p-1 mr-3 bg-rose-100 rounded-full justify-center items-center inline-flex'>
                                                             <Image src='/images/instagram.svg' width={35} height={35} alt='Instagram' />
@@ -180,9 +180,9 @@ export default function Dashboard() {
                                                     </div>
                                                 </div>
 
-                                                <div className='flex justify-between items-center w-full mt-7'>
+                                                <div className='flex justify-between sm:items-center items-start w-full sm:flex-row flex-col sm:pl-0 pl-3'>
                                                     {/* Container containing the data */}
-                                                    <div className='flex-[0.5] flex items-center'>
+                                                    <div className='flex-[0.5] flex items-center sm:mt-0 mt-3'>
                                                         {/* Image Container */}
                                                         <div className='p-0.5 mr-3 bg-violet-100 rounded-full justify-center items-center inline-flex'>
                                                             <Image src='/images/mail.svg' width={40} height={40} alt='Mail' />
@@ -192,7 +192,7 @@ export default function Dashboard() {
                                                             {email.substring(0, 20) + '..'}
                                                         </div>
                                                     </div>
-                                                    <div className='flex-[0.5] flex items-center'>
+                                                    <div className='flex-[0.5] flex items-center sm:mt-0 mt-3'>
                                                         {/* Image Container */}
                                                         <div className='p-2 mr-3 bg-rose-100 rounded-full justify-center items-center inline-flex'>
                                                             <Image src='/images/youtube.svg' width={30} height={30} alt='Instagram' />
@@ -211,8 +211,8 @@ export default function Dashboard() {
                                             <button
                                                 onClick={() => setModalIsOpen(true)}
                                                 className='flex justify-center items-center flex-col'>
-                                                <img src="/images/controls.svg" width={80} height={80} alt='Add Profile' className='bg-neutral-100 rounded-full border border-zinc-100 p-4 mb-3' />
-                                                <span>
+                                                <img src="/images/controls.svg" width={80} height={80} alt='Add Profile' className='bg-neutral-100 rounded-full border border-zinc-100 p-4 mb-3 sm:mt-0 mt-2' />
+                                                <span className='sm:my-0 my-2'>
                                                     Add Profile
                                                 </span>
                                             </button>
